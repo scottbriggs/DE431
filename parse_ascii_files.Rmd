@@ -1,0 +1,104 @@
+---
+title: "Parse ASCII Files"
+author: "Scott J Briggs"
+date: "8/24/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r message = FALSE, warning = FALSE}
+library(rmarkdown)
+library(knitr)
+library(readr)
+library(here)
+```
+
+```{r read_NCOEFF}
+f <- readLines(here("ASCII Files", "header.431_572"))
+NCOEFF <- as.numeric(substr(grep(pattern = "NCOEFF", x = f, value = TRUE), 24, 27))
+cat("NCOEFF = ", NCOEFF)
+```
+
+```{r read_EPOCH}
+EPHEMERIS <- grep(pattern = "Ephemeris", x = f, value = TRUE)
+START_EPOCH <- grep(pattern = "Start", x = f, value = TRUE)
+FINAL_EPOCH <- grep(pattern = "Final", x = f, value = TRUE)
+cat("EPHEMERIS = ", EPHEMERIS)
+cat("START_EPOCH = ", START_EPOCH)
+cat("FINAL_EPOCH = ", FINAL_EPOCH)
+```
+
+```{r read_Julian_Days}
+DE431_Julian_Day_Begin <- as.numeric(substr(f[11], 2, 12))
+cat("DE431_Julian_Day_Begin = ", DE431_Julian_Day_Begin)
+DE431_Julian_Day_End <- as.numeric(substr(f[11], 15, 24))
+cat("DE431_Julian_Day_End = ", DE431_Julian_Day_End)
+Days_In_Block <- as.integer(substr(f[11], 34, 35))
+cat("Days_In_Block = ", Days_In_Block)
+```
+
+```{r read_CONSTANTS}
+```
+
+```{r read_GROUP_1050}
+START_OFFSET = replicate(15,0)
+START_OFFSET[1] <- as.integer(substr(f[272], 6, 6))
+START_OFFSET[2] <- as.integer(substr(f[272], 11, 12))
+START_OFFSET[3] <- as.integer(substr(f[272], 17, 18))
+START_OFFSET[4] <- as.integer(substr(f[272], 23, 24))
+START_OFFSET[5] <- as.integer(substr(f[272], 30, 30))
+START_OFFSET[6] <- as.integer(substr(f[272], 36, 36))
+START_OFFSET[7] <- as.integer(substr(f[272], 42, 42))
+START_OFFSET[8] <- as.integer(substr(f[272], 48, 48))
+START_OFFSET[9] <- as.integer(substr(f[272], 54, 54))
+START_OFFSET[10] <- as.integer(substr(f[272], 59, 60))
+START_OFFSET[11] <- as.integer(substr(f[272], 65, 66))
+START_OFFSET[12] <- as.integer(substr(f[272], 71, 72))
+START_OFFSET[13] <- as.integer(substr(f[272], 77, 78))
+START_OFFSET[14] <- as.integer(substr(f[272], 84, 84))
+START_OFFSET[15] <- as.integer(substr(f[272], 90, 90))
+cat("START_OFFSET = ", START_OFFSET)
+
+NUM_COEFF = replicate(15,0)
+NUM_COEFF[1] <- as.integer(substr(f[273], 5, 6))
+NUM_COEFF[2] <- as.integer(substr(f[273], 11, 12))
+NUM_COEFF[3] <- as.integer(substr(f[273], 16, 18))
+NUM_COEFF[4] <- as.integer(substr(f[273], 22, 24))
+NUM_COEFF[5] <- as.integer(substr(f[273], 28, 30))
+NUM_COEFF[6] <- as.integer(substr(f[273], 34, 36))
+NUM_COEFF[7] <- as.integer(substr(f[273], 40, 42))
+NUM_COEFF[8] <- as.integer(substr(f[273], 46, 48))
+NUM_COEFF[9] <- as.integer(substr(f[273], 52, 54))
+NUM_COEFF[10] <- as.integer(substr(f[273], 58, 60))
+NUM_COEFF[11] <- as.integer(substr(f[273], 64, 66))
+NUM_COEFF[12] <- as.integer(substr(f[273], 70, 72))
+NUM_COEFF[13] <- as.integer(substr(f[273], 76, 78))
+NUM_COEFF[14] <- as.integer(substr(f[273], 81, 84))
+NUM_COEFF[15] <- as.integer(substr(f[273], 87, 90))
+cat("NUM_COEFF = ", NUM_COEFF)
+
+NUM_SUBINTERVALS = replicate(15,0)
+NUM_SUBINTERVALS[1] <- as.integer(substr(f[274], 6, 6))
+NUM_SUBINTERVALS[2] <- as.integer(substr(f[274], 12, 12))
+NUM_SUBINTERVALS[3] <- as.integer(substr(f[274], 18, 18))
+NUM_SUBINTERVALS[4] <- as.integer(substr(f[274], 24, 24))
+NUM_SUBINTERVALS[5] <- as.integer(substr(f[274], 30, 30))
+NUM_SUBINTERVALS[6] <- as.integer(substr(f[274], 36, 36))
+NUM_SUBINTERVALS[7] <- as.integer(substr(f[274], 42, 42))
+NUM_SUBINTERVALS[8] <- as.integer(substr(f[274], 48, 48))
+NUM_SUBINTERVALS[9] <- as.integer(substr(f[274], 54, 54))
+NUM_SUBINTERVALS[10] <- as.integer(substr(f[274], 60, 60))
+NUM_SUBINTERVALS[11] <- as.integer(substr(f[274], 66, 66))
+NUM_SUBINTERVALS[12] <- as.integer(substr(f[274], 72, 72))
+NUM_SUBINTERVALS[13] <- as.integer(substr(f[274], 78, 78))
+NUM_SUBINTERVALS[14] <- as.integer(substr(f[274], 84, 84))
+NUM_SUBINTERVALS[15] <- as.integer(substr(f[274], 90, 90))
+cat("NUM_SUBINTERVALS = ", NUM_SUBINTERVALS)
+```
+
+```{r Build_Table}
+
+```
