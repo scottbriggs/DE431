@@ -100,5 +100,17 @@ cat("NUM_SUBINTERVALS = ", NUM_SUBINTERVALS)
 ```
 
 ```{r Build_Table}
-
+a <- c(3,3,3,3,3,3,3,3,3,3,3,2,3,3,1)
+b <- c('km', 'km', 'km', 'km', 'km', 'km', 'km', 'km', 'km', 'km', 'km', 'radians', 'radians',
+       'radians/day', 'seconds')
+c <- c('SSB', 'SSB', 'SSB', 'SSB', 'SSB', 'SSB', 'SSB', 'SSB', 'SSB', 'Earth', 'SSB',
+       '', '', '', '')
+d <- c('Mercury', 'Venus', 'Earth-Moon Barycenter', 'Mars', 'Jupiter', 'Saturn', 'Uranus',
+       'Neptune', 'Pluto', 'Moon - Geocentric', 'Sun', 'Earth Nutations in Longitude 
+       and Obliquity', 'Lunar Mantle Libration', 'Lunar Mantle Angular Velocity', 
+       'TT-TDB - at Geocenter')
+df <- data.frame(a, b, c, START_OFFSET, NUM_COEFF, NUM_SUBINTERVALS, d)
+colnames(df) <- c("Properties", "Units", "Center", "Start Offset", "Number of Coefficients",
+                  "Number of Subintervals", "Name")
+kable(df)
 ```
