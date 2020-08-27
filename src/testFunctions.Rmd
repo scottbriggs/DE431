@@ -1,0 +1,108 @@
+---
+title: "Test Functions"
+author: "Scott J Briggs"
+date: "8/26/2020"
+output: html_document
+---
+
+```{r message=FALSE, warning=FALSE}
+library(rmarkdown)
+library(here)
+```
+
+```{r test_calendar_functions}
+here("src")
+source("julianDay.R")
+source("calendarDate.R")
+source("dayOfWeek.R")
+
+x = julianDay(1957,10,4.81)
+cat(format(x, nsmall = 2))
+y = calendarDate(x)
+str(y)
+dayOfWeek(1957, 10, 4.81)
+
+x = julianDay(333,1,27.5)
+cat(format(x, nsmall = 2))
+y = calendarDate(x)
+str(y)
+dayOfWeek(333,1,27.5)
+
+x = julianDay(2000,1,1.5)
+cat(format(x, nsmall = 2))
+y = calendarDate(x)
+str(y)
+dayOfWeek(2000,1,1.5)
+
+x = julianDay(1987,1,27.0)
+cat(format(x, nsmall = 2))
+y = calendarDate(x)
+str(y)
+dayOfWeek(1987,1,27.0)
+
+x = julianDay(1987,6,19.5)
+cat(format(x, nsmall = 2))
+y = calendarDate(x)
+str(y)
+dayOfWeek(1987,6,19.5)
+
+x = julianDay(1988,1,27.0)
+cat(format(x, nsmall = 2))
+y = calendarDate(x)
+str(y)
+dayOfWeek(1988,1,27.0)
+
+x = julianDay(1988,6,19.5)
+cat(format(x, nsmall = 2))
+y = calendarDate(x)
+str(y)
+dayOfWeek(1988,6,19.5)
+
+x = julianDay(1900,1,1.0)
+cat(format(x, nsmall = 2))
+y = calendarDate(x)
+str(y)
+dayOfWeek(1900,1,1.0)
+
+x = julianDay(1600,1,1.0)
+cat(format(x, nsmall = 2))
+y = calendarDate(x)
+str(y)
+dayOfWeek(1600,1,1.0)
+
+x = julianDay(1600,12,31.0)
+cat(format(x, nsmall = 2))
+y = calendarDate(x)
+str(y)
+dayOfWeek(1600,12,31.0)
+
+x = julianDay(837,4,10.3)
+cat(format(x, nsmall = 2))
+y = calendarDate(x)
+str(y)
+dayOfWeek(837,4,10.3)
+
+x = julianDay(-1000,7,12.5)
+cat(format(x, nsmall = 2))
+y = calendarDate(x)
+str(y)
+dayOfWeek(-1000,7,12.5)
+
+x = julianDay(-1000,2,20.0)
+cat(format(x, nsmall = 2))
+y = calendarDate(x)
+str(y)
+dayOfWeek(-1000,2,29.0)
+
+x = julianDay(-1001,8,17.9)
+cat(format(x, nsmall = 2))
+y = calendarDate(x)
+str(y)
+dayOfWeek(-1001,8,17.9)
+
+x = julianDay(-4712,1,1.50)
+cat(format(x, nsmall = 2))
+y = calendarDate(x)
+str(y)
+dayOfWeek(-4712,1,1.50)
+```
