@@ -18,9 +18,11 @@ julianDay <- function (year, month, day)
     
     b = 0
     
+    # Julian Calendar
     if (y < 1582 | (y == 1582 & m < 10) | (y == 1582 & m ==10 & y < 15 ))
     {
         b = 0
+    # Gregorian Calendar
     }else {
         a <- trunc(y / 100)
         b <- 2- a + trunc(a/4)
