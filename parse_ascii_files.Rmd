@@ -41,6 +41,9 @@ cat("Days_In_Block = ", Days_In_Block)
 ```
 
 ```{r read_CONSTANTS}
+tempStr = as.character(substr(f[81], 29, 52))
+tempStr = chartr(old = "D", new = "E", tempStr)
+EMRAT = as.numeric(tempStr)
 ```
 
 ```{r read_GROUP_1050}
