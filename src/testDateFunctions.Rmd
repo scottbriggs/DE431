@@ -12,9 +12,7 @@ library(here)
 
 ```{r test_calendar_functions}
 here("src")
-source("julianDay.R")
-source("calendarDate.R")
-source("dayOfWeek.R")
+source("date.R")
 
 x = julianDay(1957,10,4.81)
 cat(format(x, nsmall = 2))
