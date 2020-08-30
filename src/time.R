@@ -1,5 +1,6 @@
 HHMMSS <- function (HHdd)
 {
+    # Converts a decimal hours to hours, minutes, and seconds
     HHdd <- decimal_hours
     intpart1 <- trunc(HHdd)
     fracpart1 <- HHdd - intpart1
@@ -13,5 +14,6 @@ HHMMSS <- function (HHdd)
 
 HHdd <- function (hr, min, sec)
 {
+    # Converts hours,  minutes, and seconds to decimal hours.
     decimal_hours <- hr + min  /60 + sec / 3600
 }

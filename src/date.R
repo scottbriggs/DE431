@@ -1,5 +1,7 @@
 julianDay <- function (year, month, day)
 {
+    # Calculate the julian day from a calendar date - Julian or Gregorian calendar is acceptable.
+    # The julian day starts on January 1, -4712.
     # Year is an integer
     # Month is an integer from 1 - 12 indicating the year - January - December
     # Day is a decimal number indicating the day and fraction of a day
@@ -32,6 +34,8 @@ julianDay <- function (year, month, day)
 
 calendarDate <- function(jd)
 {
+    # Calculate the calendar date given a julian day number. Works for julian and calendar dates
+    # from January 1, -4712.
     jd <- jd + 0.50
     
     jd_int <- trunc(jd)
@@ -79,6 +83,7 @@ calendarDate <- function(jd)
 
 dayOfWeek <- function(year, month, day)
 {
+    # Determines the day of the week given a calendar date. Works for Julian and Gregorian calendars.
     d <- trunc(day)
     jd <- julianDay(year, month, d)
     
@@ -105,6 +110,7 @@ dayOfWeek <- function(year, month, day)
 
 dateOfEaster <- function(year)
 {
+    # Calculates the date of Christian Easter
     month <- 0
     day <- 0
     
